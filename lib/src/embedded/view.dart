@@ -2,7 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/services.dart';
 import 'package:flutter/widgets.dart';
-
+import 'package:flutter/material.dart';
 import 'controller.dart';
 import '../models/models.dart';
 
@@ -26,11 +26,20 @@ class MapBoxNavigationView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     if (Platform.isAndroid) {
-      return AndroidView(
-          viewType: 'FlutterMapboxNavigationView',
-          onPlatformViewCreated: _onPlatformViewCreated,
-          creationParams: options!.toMap(),
-          creationParamsCodec: _decoder);
+      return GestureDetector(
+
+        onTap: (){
+          print({
+            "code":"poxmox",
+            "click event":"on embeded map"
+          });
+        },
+        child:Container(
+
+          child: Center(child: Text("this is a map")),
+
+          color: Colors.red,height: 500,width: MediaQuery.of(context).size.width,)
+      );
     } else if (Platform.isIOS) {
       return UiKitView(
           viewType: 'FlutterMapboxNavigationView',
