@@ -337,7 +337,7 @@ open class TurnByTurn(ctx: Context, act: Activity, bind: NavigationActivityBindi
                 .voiceUnits(navigationVoiceUnits)
                 .annotations(DirectionsCriteria.ANNOTATION_DISTANCE)
                 .baseUrl("https://api.mapbox.com")
-                .user(UUID.randomUUID().toString())
+                //.user(UUID.randomUUID().toString())
                 // provide the bearing for the origin of the request to ensure
                 // that the returned route faces in the direction of the current user movement
                 /*
